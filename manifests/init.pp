@@ -56,6 +56,7 @@ class dhcp (
   String $option_code150_label                            = 'pxegrub',
   String $option_code150_value                            = 'text',
   Hash[String, Hash] $dhcp_classes                        = {},
+  Hash[String, Hash] $dhcp_subclasses                     = {},
   Hash[String, Hash] $hosts                               = {},
   Hash[String, Hash] $ignoredsubnets                      = {},
   Hash[String, Hash] $pools                               = {},
@@ -287,6 +288,9 @@ class dhcp (
 
   # Create any DHCP classes requested
   create_resources('dhcp::dhcp_class', $dhcp_classes)
+
+  # Create any DHCP subclasses requested
+  create_resources('dhcp::dhcp_subclass', $dhcp_subclasses)
 
   # Create any DHCP hosts requested
   create_resources('dhcp::host', $hosts)

@@ -154,6 +154,7 @@ The following is the list of all parameters available for this class.
 | `servicename`          | String    | `$dhcp::params::servicename`      |
 | `use_ldap`             | Boolean   | `false`                           |
 | `dhcp_classes`         | Hash      | `{}`                              |
+| `dhcp_subclasses`      | Hash      | `{}`                              |
 | `hosts`                | Hash      | `{}`                              |
 | `ignoredsubnets`       | Hash      | `{}`                              |
 | `pools`                | Hash      | `{}`                              |
