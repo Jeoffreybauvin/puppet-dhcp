@@ -30,6 +30,7 @@ matrix:
     env: PUPPET_VERSION="~> 5.0" CHECK=build DEPLOY_TO_FORGE=yes
 branches:
   only:
+  - feature/manage_subclass
   - master
   - /^v\d/
 notifications:
