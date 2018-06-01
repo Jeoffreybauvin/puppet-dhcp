@@ -175,6 +175,7 @@ describe 'dhcp', type: :class do
                                                                   'mac'     => '00:50:56:00:00:01',
                                                                   'ip'      => '10.0.1.51' } },
                              'dhcp_classes'   => { 'vendor-class-identifier' => { 'parameters' => ['match option vendor-class-identifier'] } })
+                             'dhcp_subclasses'=> { 'vendor-subclass-identifier' => { 'depends': 'vendor-class-identifier', 'parameters' => ['match option vendor-subclass-identifier'] } })
       end
 
       it 'has resources' do
@@ -183,6 +184,7 @@ describe 'dhcp', type: :class do
         is_expected.to contain_concat__fragment('dhcp_ignoredsubnet_eth0')
         is_expected.to contain_concat__fragment('dhcp_host_server1')
         is_expected.to contain_concat__fragment('dhcp_class_vendor-class-identifier')
+        is_expected.to contain_concat__fragment('dhcp_subclass_vendor-subclass-identifier')
       end
     end
 
